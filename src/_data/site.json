@@ -1,1 +1,9 @@
-{"author":"INOVUE / Muse Sample","cta":"無料で始める","description":"Eleventy + GitHub Pages で運用するサンプルLP。Museがデザイン・実装・ビルド・デプロイ設計まで担当したデモです。","github":"https://github.com/inovue/muse-11ty-lp","name":"LUMEN","tagline":"11tyで作る、0.4秒で開くLP","url":"https://inovue.github.io/muse-11ty-lp/"}
+{
+  "author": "INOVUE / Muse Sample",
+  "cta": "無料で始める",
+  "description": "Eleventy + GitHub Pages で運用するサンプルLP。Museがデザイン・実装・ビルド・デプロイ設計まで担当したデモです。 gh CLI からの push でも自動デプロイされます。",
+  "github": "https://github.com/inovue/muse-11ty-lp",
+  "name": "LUMEN",
+  "tagline": "11tyで作る、0.4秒で開くLP",
+  "url": "https://inovue.github.io/muse-11ty-lp/"
+}
