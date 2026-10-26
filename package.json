@@ -1,0 +1,1 @@
+{"description":"Sample LP built with Eleventy (11ty) for GitHub Pages — designed & operated by Muse","devDependencies":{"@11ty/eleventy":"^3.0.0"},"engines":{"node":">=18"},"name":"muse-11ty-lp","scripts":{"build":"eleventy","build:gh":"ELEVENTY_PATH_PREFIX=/muse-11ty-lp/ eleventy","clean":"rm -rf _site","start":"eleventy --serve"},"type":"module","version":"1.0.0"}
