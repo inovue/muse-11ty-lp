@@ -7,6 +7,7 @@ export default function (eleventyConfig) {
 
   // 単独ファイルの配信（OG画像とfaviconのみ。写真は eleventy-img が生成する）
   eleventyConfig.addPassthroughCopy({ "src/img/og.jpg": "img/og.jpg" });
+  eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
 
   // CSS/JSはLP単一ページなのでHTMLへインライン化し、リクエスト自体を消す

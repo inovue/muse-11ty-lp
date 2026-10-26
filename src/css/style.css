@@ -1,4 +1,9 @@
 /* 日々珈琲 — v3デザイン実装: 明朝×余白×罫線。素のCSSのみ、ライブラリなし */
+/* 見出しフォントは自前サブセット（58KB・単一ファイル）をpreload。本文ゴシックは端末フォントに任せ、転送量を最小化する */
+@font-face{
+  font-family:"Shippori Mincho";font-style:normal;font-weight:500 700;font-display:swap;
+  src:url("fonts/shippori-mincho-subset.woff2") format("woff2");
+}
 :root{
   --bg:#faf6ef; --paper:#fffdf8; --ink:#2b2119; --muted:#6b5847;
   --line:#ddd2c2; --accent:#9a441f; --sage:#7d8471; --footer:#241a12;

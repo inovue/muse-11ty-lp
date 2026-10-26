@@ -12,6 +12,12 @@ Eleventy (11ty) + GitHub Pages で運用します。デザインは要件定義 
 - `src/img/` — AI生成した店舗写真（WebP最適化済み）
 - `.github/workflows/deploy.yml` — mainへpushで自動デプロイ
 
+## Lighthouse対策（モバイル/デスクトップ全カテゴリ100をローカル計測で確認）
+- 画像: `@11ty/eleventy-img` で AVIF/WebP/JPEG の複数幅を生成、`width/height` 付与で CLS 0
+- CSS/JS は HTML にインライン化し、リクエストは初期表示で6本・転送量 約193KBまで削減
+- フォント: 見出しの Shippori Mincho は使用文字だけのサブセット（単一ファイル 58KB、`scripts/build-fonts.py` で再生成）。本文ゴシックは端末フォント
+- テキスト色のコントラスト比は WCAG AA 以上を確保
+
 ## ローカル
 ```bash
 npm install
