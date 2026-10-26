@@ -1,7 +1,11 @@
 <footer class="footer">
-  <div>
-    <strong>{{ site.name }}.</strong>
-    <p>{{ site.description }}</p>
-  </div>
-  <small>© {% year %} {{ site.author }} — Built with Eleventy &amp; GitHub Pages. Sample LP by Muse.</small>
+  <p class="footer-name">{{ site.name }}</p>
+  <p class="footer-en">{{ site.nameEn }}</p>
+  <p>{{ site.address }}</p>
+  <p class="footer-links">
+    <a href="{{ site.instagram }}" target="_blank" rel="noreferrer">Instagram</a>
+    <span aria-hidden="true">・</span>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </p>
+  <small>© {% year %} {{ site.name }} — 静かな時間を、淹れる。</small>
 </footer>

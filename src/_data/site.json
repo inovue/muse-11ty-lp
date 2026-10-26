@@ -1,9 +1,1 @@
-{
-  "author": "INOVUE / Muse Sample",
-  "cta": "無料で始める",
-  "description": "Eleventy + GitHub Pages で運用するサンプルLP。Museがデザイン・実装・ビルド・デプロイ設計まで担当したデモです。 gh CLI からの push でも自動デプロイされます。",
-  "github": "https://github.com/inovue/muse-11ty-lp",
-  "name": "LUMEN",
-  "tagline": "11tyで作る、0.4秒で開くLP",
-  "url": "https://inovue.github.io/muse-11ty-lp/"
-}
+{"address":"〒135-0021 東京都江東区清澄3-2-8（サンプル店舗）","closed":"水曜日","description":"清澄白河の自家焙煎の小さな珈琲店、日々珈琲。毎朝の焙煎と、静かな時間を淹れる一杯を。","email":"info@hibicoffee.jp","hours":"平日 8:00–18:00 ／ 土日祝 9:00–18:00","instagram":"https://www.instagram.com/","map":"https://www.google.com/maps/search/?api=1&query=%E6%B8%85%E6%BE%84%E7%99%BD%E6%B2%B3%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC","name":"日々珈琲","nameEn":"HIBI COFFEE","station":"清澄白河駅（出口B2）から徒歩5分","tagline":"日々の、一杯。"}

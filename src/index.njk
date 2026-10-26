@@ -4,89 +4,95 @@ title: トップ
 ---
 
 <section class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">✦ ELEVENTY × GITHUB PAGES × MUSE</p>
-    <h1>重いCMSを捨てて、<br><em>0.4秒で開くLP</em>へ。</h1>
-    <p class="lead">{{ site.description }}</p>
-    <div class="cta-row">
-      <a class="btn btn-lg" href="#pricing">{{ site.cta }}</a>
-      <a class="btn btn-ghost btn-lg" href="#how">仕組みを見る →</a>
+  <div class="hero-media">
+    <img src="{{ '/img/hero.webp' | url }}" alt="日差しの入る木のカウンターと棚の店内" fetchpriority="high">
+    <h1 class="hero-title">日々の、<br>一杯。</h1>
+  </div>
+  <p class="hero-vertical" aria-hidden="true">静かな時間を、淹れる。</p>
+  <p class="hero-lead">
+    清澄白河の小さな自家焙煎店です。毎朝、豆を手作業で焙煎し、丁寧に抽出します。
+    特別な日ではなく、いつもの一杯を。
+  </p>
+</section>
+
+<section id="concept" class="section reveal">
+  <p class="sec-label"><span>01</span> — CONCEPT</p>
+  <div class="concept-grid">
+    <div>
+      <h2>焙煎は、<br>朝の仕度から。</h2>
+      <p>
+        毎朝、豆を手作業で焙煎し、丁寧に抽出します。日々の繰り返しが、静かな時間をつくります。
+        特別な日ではなく、いつもの一杯を。私たちは、その一杯に心を込めています。
+      </p>
     </div>
-    <dl class="stats">
-      <div><dt>0.4s</dt><dd>表示速度（目安）</dd></div>
-      <div><dt>¥0</dt><dd>ホスティング費用</dd></div>
-      <div><dt>2.8s</dt><dd>ビルド時間 / 100p</dd></div>
-      <div><dt>100</dt><dd>Lighthouse目安</dd></div>
+    <figure class="concept-photo">
+      <img src="{{ '/img/drip.webp' | url }}" alt="ハンドドリップで珈琲を淹れる様子" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section id="menu" class="section reveal">
+  <p class="sec-label"><span>02</span> — MENU</p>
+  <h2 class="sec-title">メニュー</h2>
+  <div class="menu-grid">
+    <ul class="menu-list">
+      {% for item in menu %}
+      <li>
+        <span class="menu-name">{{ item.name }}</span>
+        <span class="menu-dots" aria-hidden="true"></span>
+        <span class="menu-price">¥{{ item.price }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <figure class="menu-photo">
+      <img src="{{ '/img/latte.webp' | url }}" alt="ラテアートのカフェラテ" loading="lazy">
+    </figure>
+  </div>
+  <p class="note">※ 豆は季節により変わります。店頭でお尋ねください。</p>
+</section>
+
+<section id="beans" class="section reveal">
+  <p class="sec-label"><span>03</span> — BEANS</p>
+  <h2 class="sec-title">豆の販売</h2>
+  <figure class="beans-photo">
+    <img src="{{ '/img/beans.webp' | url }}" alt="自家焙煎の珈琲豆の袋" loading="lazy">
+  </figure>
+  <div class="beans-grid">
+    {% for bean in beans %}
+    <article class="bean">
+      <h3>{{ bean.name }}</h3>
+      <p>{{ bean.notes }}</p>
+      <p class="bean-price">{{ bean.price }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="gallery" class="section reveal">
+  <p class="sec-label"><span>04</span> — GALLERY</p>
+  <h2 class="sec-title">ギャラリー</h2>
+  <div class="gallery">
+    <img class="g-a" src="{{ '/img/hero.webp' | url }}" alt="店内の木の棚とカウンター" loading="lazy">
+    <img class="g-b" src="{{ '/img/latte.webp' | url }}" alt="カフェラテ" loading="lazy">
+    <img class="g-c" src="{{ '/img/drip.webp' | url }}" alt="ドリップの様子" loading="lazy">
+    <img class="g-d" src="{{ '/img/beans.webp' | url }}" alt="珈琲豆の袋" loading="lazy">
+  </div>
+</section>
+
+<section id="access" class="section reveal">
+  <p class="sec-label"><span>05</span> — ACCESS</p>
+  <h2 class="sec-title">店舗案内</h2>
+  <div class="access-grid">
+    <dl class="access-list">
+      <div><dt>住所</dt><dd>{{ site.address }}<br>{{ site.station }}</dd></div>
+      <div><dt>営業時間</dt><dd>{{ site.hours }}</dd></div>
+      <div><dt>定休日</dt><dd>{{ site.closed }}</dd></div>
+      <div><dt>お問い合わせ</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>
     </dl>
+    <a class="map-card" href="{{ site.map }}" target="_blank" rel="noreferrer">
+      <span class="map-pin" aria-hidden="true">●</span>
+      <span>Google マップで見る</span>
+      <small>清澄白河駅から徒歩5分</small>
+    </a>
   </div>
-  <div class="code-window" aria-hidden="true">
-    <div class="code-head"><span></span><span></span><span></span> eleventy — build</div>
-    <pre><code>$ npm run build:gh
-[11ty] Writing _site/index.html
-       from ./src/index.njk
-[11ty] Copied 2 files / Wrote 1 file
-       in 0.42 seconds ✓
-→ GitHub Pages に自動デプロイ完了</code></pre>
-  </div>
-</section>
-
-<section id="features" class="section reveal">
-  <p class="eyebrow">FEATURES</p>
-  <h2>LPに必要なものは、<br>全部データで管理できる。</h2>
-  <div class="grid">
-    {% for f in features %}
-    <article class="card">
-      <div class="card-icon">{{ f.icon }}</div>
-      <h3>{{ f.title }}</h3>
-      <p>{{ f.body }}</p>
-    </article>
-    {% endfor %}
-  </div>
-  <p class="note">↑ この6枚は <code>src/_data/features.json</code> から自動生成。JSONを直せばカードも変わります。</p>
-</section>
-
-<section id="how" class="section section-alt reveal">
-  <p class="eyebrow">HOW IT WORKS</p>
-  <h2>Museが運用する、3ステップ</h2>
-  <ol class="steps">
-    <li><strong>1. 頼む</strong><span>「ヒーローの文言変えて」「セクション足して」と会話で依頼</span></li>
-    <li><strong>2. Museが編集＋ビルド</strong><span>Nunjucks / CSS / JSON を編集し、ローカルでビルド確認</span></li>
-    <li><strong>3. Pushで公開</strong><span>GitHub Actionsが自動ビルド → GitHub Pagesにデプロイ</span></li>
-  </ol>
-</section>
-
-<section id="pricing" class="section reveal">
-  <p class="eyebrow">PRICING</p>
-  <h2>シンプルな料金</h2>
-  <div class="grid grid-3">
-    {% for p in pricing %}
-    <article class="price {% if p.featured %}is-featured{% endif %}">
-      {% if p.featured %}<span class="badge">人気</span>{% endif %}
-      <h3>{{ p.name }}</h3>
-      <p class="price-desc">{{ p.desc }}</p>
-      <p class="amount">{{ p.price }}<small>{{ p.unit }}</small></p>
-      <ul>{% for feat in p.features %}<li>✓ {{ feat }}</li>{% endfor %}</ul>
-      <a class="btn {% if not p.featured %}btn-ghost{% endif %}" href="#cta">このプランで始める</a>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="faq" class="section section-alt reveal">
-  <p class="eyebrow">FAQ</p>
-  <h2>よくある質問</h2>
-  <div class="faq">
-    {% for item in faq %}
-    <details>
-      <summary>{{ item.q }}</summary>
-      <p>{{ item.a }}</p>
-    </details>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="cta" class="cta reveal">
-  <h2>まずはこのサンプルを、<br>あなたの言葉に変えてみよう。</h2>
-  <p>業種・プロダクト名・色味を教えてくれれば、このLPをそのまま作り替えます。</p>
-  <a class="btn btn-lg btn-light" href="{{ site.github }}" target="_blank" rel="noreferrer">GitHubでコードを見る</a>
 </section>
