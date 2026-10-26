@@ -5,7 +5,7 @@ title: トップ
 
 <section class="hero">
   <div class="hero-media">
-    <img src="{{ '/img/hero.webp' | url }}" alt="日差しの入る木のカウンターと棚の店内" fetchpriority="high">
+    {% image "hero.webp", "日差しの入る木のカウンターと棚の店内", { loading: "eager", sizes: "(max-width: 860px) 86vw, 1000px" } %}
     <h1 class="hero-title">日々の、<br>一杯。</h1>
   </div>
   <p class="hero-vertical" aria-hidden="true">静かな時間を、淹れる。</p>
@@ -26,7 +26,7 @@ title: トップ
       </p>
     </div>
     <figure class="concept-photo">
-      <img src="{{ '/img/drip.webp' | url }}" alt="ハンドドリップで珈琲を淹れる様子" loading="lazy">
+      {% image "drip.webp", "ハンドドリップで珈琲を淹れる様子", { sizes: "(max-width: 860px) 92vw, 520px" } %}
     </figure>
   </div>
 </section>
@@ -45,7 +45,7 @@ title: トップ
       {% endfor %}
     </ul>
     <figure class="menu-photo">
-      <img src="{{ '/img/latte.webp' | url }}" alt="ラテアートのカフェラテ" loading="lazy">
+      {% image "latte.webp", "ラテアートのカフェラテ", { sizes: "(max-width: 860px) 92vw, 460px" } %}
     </figure>
   </div>
   <p class="note">※ 豆は季節により変わります。店頭でお尋ねください。</p>
@@ -55,7 +55,7 @@ title: トップ
   <p class="sec-label"><span>03</span> — BEANS</p>
   <h2 class="sec-title">豆の販売</h2>
   <figure class="beans-photo">
-    <img src="{{ '/img/beans.webp' | url }}" alt="自家焙煎の珈琲豆の袋" loading="lazy">
+    {% image "beans.webp", "自家焙煎の珈琲豆の袋", { sizes: "(max-width: 860px) 92vw, 1120px" } %}
   </figure>
   <div class="beans-grid">
     {% for bean in beans %}
@@ -72,10 +72,10 @@ title: トップ
   <p class="sec-label"><span>04</span> — GALLERY</p>
   <h2 class="sec-title">ギャラリー</h2>
   <div class="gallery">
-    <img class="g-a" src="{{ '/img/hero.webp' | url }}" alt="店内の木の棚とカウンター" loading="lazy">
-    <img class="g-b" src="{{ '/img/latte.webp' | url }}" alt="カフェラテ" loading="lazy">
-    <img class="g-c" src="{{ '/img/drip.webp' | url }}" alt="ドリップの様子" loading="lazy">
-    <img class="g-d" src="{{ '/img/beans.webp' | url }}" alt="珈琲豆の袋" loading="lazy">
+    <div class="g-a">{% image "hero.webp", "店内の木の棚とカウンター", { sizes: "(max-width: 860px) 92vw, 700px", widths: [480, 800, 1200] } %}</div>
+    <div class="g-b">{% image "latte.webp", "カフェラテ", { sizes: "(max-width: 860px) 92vw, 460px", widths: [480, 800] } %}</div>
+    <div class="g-c">{% image "drip.webp", "ドリップの様子", { sizes: "(max-width: 860px) 92vw, 520px", widths: [480, 800] } %}</div>
+    <div class="g-d">{% image "beans.webp", "珈琲豆の袋", { sizes: "(max-width: 860px) 92vw, 700px", widths: [480, 800, 1200] } %}</div>
   </div>
 </section>
 
