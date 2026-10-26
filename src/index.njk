@@ -1,0 +1,92 @@
+---
+layout: layouts/base.njk
+title: トップ
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">✦ ELEVENTY × GITHUB PAGES × MUSE</p>
+    <h1>重いCMSを捨てて、<br><em>0.4秒で開くLP</em>へ。</h1>
+    <p class="lead">{{ site.description }}</p>
+    <div class="cta-row">
+      <a class="btn btn-lg" href="#pricing">{{ site.cta }}</a>
+      <a class="btn btn-ghost btn-lg" href="#how">仕組みを見る →</a>
+    </div>
+    <dl class="stats">
+      <div><dt>0.4s</dt><dd>表示速度（目安）</dd></div>
+      <div><dt>¥0</dt><dd>ホスティング費用</dd></div>
+      <div><dt>2.8s</dt><dd>ビルド時間 / 100p</dd></div>
+      <div><dt>100</dt><dd>Lighthouse目安</dd></div>
+    </dl>
+  </div>
+  <div class="code-window" aria-hidden="true">
+    <div class="code-head"><span></span><span></span><span></span> eleventy — build</div>
+    <pre><code>$ npm run build:gh
+[11ty] Writing _site/index.html
+       from ./src/index.njk
+[11ty] Copied 2 files / Wrote 1 file
+       in 0.42 seconds ✓
+→ GitHub Pages に自動デプロイ完了</code></pre>
+  </div>
+</section>
+
+<section id="features" class="section reveal">
+  <p class="eyebrow">FEATURES</p>
+  <h2>LPに必要なものは、<br>全部データで管理できる。</h2>
+  <div class="grid">
+    {% for f in features %}
+    <article class="card">
+      <div class="card-icon">{{ f.icon }}</div>
+      <h3>{{ f.title }}</h3>
+      <p>{{ f.body }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="note">↑ この6枚は <code>src/_data/features.json</code> から自動生成。JSONを直せばカードも変わります。</p>
+</section>
+
+<section id="how" class="section section-alt reveal">
+  <p class="eyebrow">HOW IT WORKS</p>
+  <h2>Museが運用する、3ステップ</h2>
+  <ol class="steps">
+    <li><strong>1. 頼む</strong><span>「ヒーローの文言変えて」「セクション足して」と会話で依頼</span></li>
+    <li><strong>2. Museが編集＋ビルド</strong><span>Nunjucks / CSS / JSON を編集し、ローカルでビルド確認</span></li>
+    <li><strong>3. Pushで公開</strong><span>GitHub Actionsが自動ビルド → GitHub Pagesにデプロイ</span></li>
+  </ol>
+</section>
+
+<section id="pricing" class="section reveal">
+  <p class="eyebrow">PRICING</p>
+  <h2>シンプルな料金</h2>
+  <div class="grid grid-3">
+    {% for p in pricing %}
+    <article class="price {% if p.featured %}is-featured{% endif %}">
+      {% if p.featured %}<span class="badge">人気</span>{% endif %}
+      <h3>{{ p.name }}</h3>
+      <p class="price-desc">{{ p.desc }}</p>
+      <p class="amount">{{ p.price }}<small>{{ p.unit }}</small></p>
+      <ul>{% for feat in p.features %}<li>✓ {{ feat }}</li>{% endfor %}</ul>
+      <a class="btn {% if not p.featured %}btn-ghost{% endif %}" href="#cta">このプランで始める</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="faq" class="section section-alt reveal">
+  <p class="eyebrow">FAQ</p>
+  <h2>よくある質問</h2>
+  <div class="faq">
+    {% for item in faq %}
+    <details>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="cta" class="cta reveal">
+  <h2>まずはこのサンプルを、<br>あなたの言葉に変えてみよう。</h2>
+  <p>業種・プロダクト名・色味を教えてくれれば、このLPをそのまま作り替えます。</p>
+  <a class="btn btn-lg btn-light" href="{{ site.github }}" target="_blank" rel="noreferrer">GitHubでコードを見る</a>
+</section>
